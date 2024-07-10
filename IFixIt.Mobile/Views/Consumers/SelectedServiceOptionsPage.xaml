@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:card="clr-namespace:Syncfusion.Maui.Cards;assembly=Syncfusion.Maui.Cards"
+             xmlns:vm="clr-namespace:IFixIt.Mobile.ViewModels"
+             xmlns:models="clr-namespace:IFixIt.Mobile.Models"
+             x:Class="IFixIt.Mobile.Views.Consumers.SelectedServiceOptionsPage"
+             Title="Service Option Providers">
+    <!-- <ContentPage.BindingContext> -->
+    <!--     <vm:SelectedServiceOptionsViewModel /> -->
+    <!-- </ContentPage.BindingContext> -->
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="Start">
+            <CollectionView x:Name="providersView"
+                            Margin="10"
+                            SelectionChanged="ProvidersView_OnSelectionChanged"
+                            SelectionMode="Single"
+                            EmptyView="No data available!">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:ServiceProvider">
+                        <card:SfCardView>
+                            <Grid ColumnDefinitions=".35*,.65*"
+                                  ColumnSpacing="10">
+                                <Image Source="{Binding imageUrl1}"
+                                       Grid.Column="0"
+                                       Aspect="AspectFill"
+                                       HeightRequest="150"
+                                       WidthRequest="150" />
+                                <Grid Grid.Column="1" RowDefinitions=".1*,.1*,.3*,.1*"
+                                      Margin="10">
+                                    <Label FontSize="Medium"
+                                           FontAttributes="Bold"
+                                           Grid.Row="0"
+                                           Text="{Binding companyName}" />
+                                    <Label FontSize="Small"
+                                           FontAttributes="Bold"
+                                           Grid.Row="1"
+                                           Text="{Binding category}" />
+                                    <Label FontSize="15"
+                                           Grid.Row="2"
+                                           Text="{Binding description}"
+                                           HorizontalTextAlignment="Start" />
+
+                                    <Grid ColumnDefinitions="auto,auto,auto" Grid.Row="3">
+                                        <HorizontalStackLayout Grid.Column="0" VerticalOptions="Center">
+                                            <Label Text="Rating : "
+                                                   TextColor="{StaticResource Primary}" />
+                                            <Label
+                                                Text="{Binding rating}"
+                                                BackgroundColor="Transparent"
+                                                TextColor="{StaticResource Primary}" />
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Grid.Column="1" VerticalOptions="Center" Margin="10,0">
+                                            <Label Text="D : "
+                                                   TextColor="{StaticResource Primary}" />
+                                            <Label
+                                                Text="{Binding distance}"
+                                                BackgroundColor="Transparent"
+                                                TextColor="{StaticResource Primary}" />
+                                            <Label Text="Miles"
+                                                   TextColor="{StaticResource Primary}" />
+                                        </HorizontalStackLayout>
+                                        <Label Grid.Column="2"
+                                               VerticalOptions="Center"
+                                               HorizontalTextAlignment="End"
+                                               Text="Message"
+                                               BackgroundColor="Transparent"
+                                               TextColor="{StaticResource Primary}"
+                                               Margin="5,0"/>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </card:SfCardView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFixIt.Mobile", "IFixIt.Mobile\IFixIt.Mobile.csproj", "{640CC5CD-7976-4532-9A28-487C8CDEBC45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFIxIt.API", "IFIxIt.API\IFIxIt.API.csproj", "{67DEBEBB-E463-47B0-AAAD-D4C90CCF4798}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{640CC5CD-7976-4532-9A28-487C8CDEBC45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{640CC5CD-7976-4532-9A28-487C8CDEBC45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{640CC5CD-7976-4532-9A28-487C8CDEBC45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{640CC5CD-7976-4532-9A28-487C8CDEBC45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67DEBEBB-E463-47B0-AAAD-D4C90CCF4798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67DEBEBB-E463-47B0-AAAD-D4C90CCF4798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67DEBEBB-E463-47B0-AAAD-D4C90CCF4798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67DEBEBB-E463-47B0-AAAD-D4C90CCF4798}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

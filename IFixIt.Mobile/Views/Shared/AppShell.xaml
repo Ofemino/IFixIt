@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="IFixIt.Mobile.Views.Shared.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:IFixIt.Mobile.Views.Shared"
+    FlyoutBehavior="Disabled"
+    Title="IFixIt.Mobile">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate shared:LoginPage}"
+        Route="LoginPage" />
+
+</Shell>

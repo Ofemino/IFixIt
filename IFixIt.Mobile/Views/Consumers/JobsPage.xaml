@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:IFixIt.Mobile.ViewModels"
+             xmlns:cards="clr-namespace:Syncfusion.Maui.Cards;assembly=Syncfusion.Maui.Cards"
+             xmlns:models="clr-namespace:IFixIt.Mobile.Models"
+             x:Class="IFixIt.Mobile.Views.Consumers.JobsPage"
+             Title="Job Requests">
+    <ContentPage.BindingContext>
+        <viewModels:JobRequestViewModels />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="10, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       Text="Filters:" />
+
+                <CollectionView Grid.Column="1" ItemsSource="{Binding JobRequestFilterList}"
+                                SelectedItem="{Binding SelectedJobRequestFilter}"
+                                EmptyView="No filter!">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:JobRequestModel">
+                            <Frame BorderColor="{StaticResource Primary}"
+                                   CornerRadius="10"
+                                   Height="20"
+                                   Padding="2"
+                                   BackgroundColor="{StaticResource Primary}"
+                                   >
+                                <HorizontalStackLayout Spacing="15">
+                                    <Label Text="{Binding .}"
+                                           TextColor="White"/>
+                                    <Image Source="close.png"
+                                           Height="16"
+                                           BackgroundColor="White"/>
+                                </HorizontalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <ImageButton Grid.Column="2" Source="filter.png" WidthRequest="22"
+                             Margin="0"
+                             Padding="0"
+                             Command="{Binding JobRequestFilerClickCommand}" />
+            </Grid>
+            <ScrollView VerticalOptions="Start" Grid.Row="1">
+                <CollectionView ItemsSource="{Binding JobRequestList}"
+                                Margin="10"
+                                SelectedItem="{Binding SelectedJobRequest}"
+                                SelectionChangedCommand="{Binding SelectedJobRequestClickCommand}"
+                                SelectionMode="Single"
+                                EmptyView="No data available!">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:JobRequestModel">
+                            <cards:SfCardView>
+                                <Grid ColumnDefinitions=".15*,.85*"
+                                      ColumnSpacing="5">
+                                    <Image Source="{Binding ImageUrl}"
+                                           Grid.Column="0"
+                                           Aspect="AspectFill"
+                                           HeightRequest="30"
+                                           WidthRequest="30" />
+                                    <VerticalStackLayout Grid.Column="1" Spacing="3"
+                                                         Margin="5">
+                                        <Label FontSize="20"
+                                               FontAttributes="Bold"
+                                               Text="{Binding ProviderName}" />
+                                        <HorizontalStackLayout Spacing="10">
+                                            <Label FontSize="Medium"
+                                                   FontAttributes="Bold"
+                                                   Text="{Binding Category}" />
+                                            <!-- <Label FontSize="15" -->
+                                            <!--        Text="{Binding SubCategory}" -->
+                                            <!--        HorizontalTextAlignment="Start" /> -->
+                                        </HorizontalStackLayout>
+
+                                        <Label FontSize="15"
+                                               Text="{Binding CategoryTypes}"
+                                               HorizontalTextAlignment="Start" />
+                                        <Label FontSize="15"
+                                               Text="{Binding RequestDateTime}"
+                                               HorizontalTextAlignment="Start" />
+
+                                        <Grid ColumnDefinitions="auto,auto,auto">
+                                            <HorizontalStackLayout Grid.Column="0" VerticalOptions="Center">
+                                                <Label
+                                                    Text="{Binding JobStatus}"
+                                                    BackgroundColor="Transparent"
+                                                    TextColor="{StaticResource Primary}" />
+                                            </HorizontalStackLayout>
+                                            <HorizontalStackLayout Grid.Column="1" VerticalOptions="Center"
+                                                                   Margin="10,0">
+                                                <Label
+                                                    Text="{Binding Location}"
+                                                    BackgroundColor="Transparent"
+                                                    TextColor="{StaticResource Primary}" />
+
+                                            </HorizontalStackLayout>
+                                            <Label Grid.Column="2"
+                                                   VerticalOptions="Center"
+                                                   HorizontalTextAlignment="End"
+                                                   Text="View"
+                                                   BackgroundColor="Transparent"
+                                                   TextColor="{StaticResource Primary}"
+                                                   Margin="5,0" />
+                                        </Grid>
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </cards:SfCardView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </Grid>
+
+
+    </ContentPage.Content>
+</ContentPage>

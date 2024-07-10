@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<pages:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="clr-namespace:Mopups.Pages;assembly=Mopups"
+                 xmlns:viewModels="clr-namespace:IFixIt.Mobile.ViewModels"
+                 xmlns:models="clr-namespace:IFixIt.Mobile.Models"
+                 x:Class="IFixIt.Mobile.Views.Providers.UpdateWorkCatalogMopup">
+    <ContentPage.BindingContext>
+        <viewModels:UpdateWorkCatalogMopupViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" ColumnDefinitions="9*, 1*" VerticalOptions="Center">
+                <Label Text="Update Work Catalogs"
+                       Grid.Column="0"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Start" />
+                <ImageButton x:Name="BtnCloseChangeLocation"
+                             HorizontalOptions="End" Source="close.png"
+                             Grid.Column="1"
+                             HeightRequest="20"
+                             Clicked="BtnCloseChangeLocation_OnClicked" />
+            </Grid>
+            <Grid ColumnDefinitions="*, auto" Grid.Row="1"
+                  ColumnSpacing="10"
+                  Margin="0,0,0,5">
+                <Label Grid.Column="0"
+                       Text="Upload work images (max of 7 images)"
+                       VerticalTextAlignment="Center"/>
+                <Label Grid.Column="1"
+                       Text="+"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       Margin="0,0,10,0"
+                       VerticalTextAlignment="Center"/>
+            </Grid>
+
+            <ScrollView Grid.Row="2">
+                <CollectionView EmptyView="No catalog items."
+                                ItemsSource="{Binding CatalogImageList}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border HeightRequest="300"
+                                    BackgroundColor="Transparent"
+                                    Padding="5"
+                                    Stroke="{StaticResource Primary}"
+                                    StrokeThickness=".7"
+                                    StrokeShape="RoundRectangle 5"
+                                    x:DataType="models:WorkCatalogImagesModel">
+                                <Grid RowDefinitions="8.5*, 1.5*">
+                                    <Image Grid.Row="0"
+                                           Source="{Binding ImageFile}"
+                                           Aspect="AspectFill" />
+                                    <Grid ColumnDefinitions="*,*,*"
+                                          Grid.Row="1">
+                                        <HorizontalStackLayout Grid.Column="2"
+                                                               Spacing="15"
+                                                               HorizontalOptions="Center"
+                                                               VerticalOptions="Center">
+                                            <Label Text="{Binding NumberOfLikes}"
+                                                   VerticalTextAlignment="Center" />
+                                            <Image HeightRequest="25"
+                                                   Source="like_and_dislike.png" />
+                                            <Label Text="{Binding NumberOfDislikes}"
+                                                   VerticalTextAlignment="Center" />
+                                        </HorizontalStackLayout>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+            <Button Grid.Row="3"
+                    Text="Save Changes"
+                    FontSize="Medium"
+                    FontAttributes="Bold" />
+        </Grid>
+    </ContentPage.Content>
+</pages:PopupPage>

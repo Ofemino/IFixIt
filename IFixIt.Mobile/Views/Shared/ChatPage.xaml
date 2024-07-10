@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:IFixIt.Mobile.ViewModels"
+             xmlns:cards="clr-namespace:Syncfusion.Maui.Cards;assembly=Syncfusion.Maui.Cards"
+             xmlns:chat="clr-namespace:Syncfusion.Maui.Chat;assembly=Syncfusion.Maui.Chat"
+             x:Class="IFixIt.Mobile.Views.Shared.ChatPage"
+             Title="Chats">
+    <ContentPage.BindingContext>
+        <viewModels:ChatPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="5" Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ScrollView VerticalOptions="Start" Grid.Row="1">
+                    <CollectionView ItemsSource="{Binding Chats}"
+                                    Margin="0"
+                                    SelectedItem="{Binding SelectedMessage}"
+                                    SelectionChangedCommand="{Binding SelectionChangedControlCommand}"
+                                    SelectionMode="Single"
+                                    EmptyView="Start a conversation!">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="chat:TextMessage">
+                                <cards:SfCardView BackgroundColor="White"
+                                                  BorderWidth="0"
+                                                  HeightRequest="80">
+                                    <Grid ColumnDefinitions=".2*,.8*"
+                                          ColumnSpacing="10">
+                                        <Frame HeightRequest="60"
+                                               WidthRequest="60"
+                                               CornerRadius="30"
+                                               Grid.Column="0">
+                                            <Image Source="{Binding Author.Avatar}"
+                                                   Aspect="AspectFill"
+                                                   HeightRequest="60"
+                                                   WidthRequest="60" />
+                                        </Frame>
+                                        <Grid Grid.Column="1"
+                                              Margin="0"
+                                              RowSpan="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                                <RowDefinition Height="auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition />
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" Grid.Row="0" FontSize="Medium"
+                                                   FontAttributes="None"
+                                                   Text="{Binding Author.Name}"
+                                                   VerticalTextAlignment="Center" />
+
+                                            <Label Grid.Column="1" Grid.Row="0" FontSize="Small"
+                                                   Text="{Binding DateTime}"
+                                                   HorizontalTextAlignment="End"
+                                                   VerticalTextAlignment="Center" />
+
+                                            <HorizontalStackLayout Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+                                                                   Spacing="10">
+                                                <Label FontSize="Small"
+                                                       FontAttributes="None"
+                                                       Text="{Binding Text}" />
+
+                                            </HorizontalStackLayout>
+                                            <Line Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"
+                                                  Stroke="{StaticResource Primary}"
+                                                  StrokeThickness=".7"
+                                                  X2="390"
+                                                  Margin="0,0,0,0" />
+                                        </Grid>
+                                    </Grid>
+                                </cards:SfCardView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </Grid>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

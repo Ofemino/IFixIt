@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:IFixIt.Mobile.ViewModels"
+             Title="Profile"
+             x:Class="IFixIt.Mobile.Views.Providers.ProviderProfilePage">
+    <ContentPage.BindingContext>
+        <viewModels:ProviderProfilePageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   CornerRadius="50">
+                <Image VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Source="default_avatar.png"
+                       Aspect="AspectFill"
+                       HeightRequest="100"
+                       WidthRequest="100" />
+            </Frame>
+            <ScrollView Grid.Row="1"
+                        Margin="0,30,0,0">
+                <VerticalStackLayout VerticalOptions="Start"
+                                     Spacing="1">
+                    <Border BackgroundColor="{StaticResource BorderBackground}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <VerticalStackLayout Spacing="1">
+                            <Label Text="Full Name:" FontAttributes="Bold" />
+                            <Label Text="Olufemi" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border BackgroundColor="{StaticResource BorderBackground}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <VerticalStackLayout Spacing="1">
+                            <Label Text="Business Name:" FontAttributes="Bold" />
+                            <Label Text="Bahdex Auto" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border BackgroundColor="{StaticResource BorderBackground}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <VerticalStackLayout Spacing="1">
+                            <Label Text="Phone number:" FontAttributes="Bold" />
+                            <Label Text="07067794090" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border BackgroundColor="{StaticResource BorderBackground}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <VerticalStackLayout Spacing="1">
+                            <Label Text="Email:" FontAttributes="Bold" />
+                            <Label Text="ofemino@gmail.com" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border BackgroundColor="{StaticResource White}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeAddressLocationTappedCommand}" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout Spacing="1">
+                            <Grid ColumnDefinitions="*,auto">
+                                <Label Text="Business Location:" FontAttributes="Bold" />
+                                <Image Grid.Column="1"
+                                       Source="pencil.png"
+                                       HeightRequest="20" />
+                            </Grid>
+                            <Label Text="13, Adegbote Road, Kago Bus-stop. Ile-Epo Iyana-Ipaja Lagos" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border BackgroundColor="{StaticResource White}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding UpdateDocumentTappedCommand}" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout Spacing="1">
+                            <Grid ColumnDefinitions="*,auto" RowDefinitions="*,*">
+                                <Label Text="Documentation:" FontAttributes="Bold" />
+                                <Image Grid.Column="1"
+                                       Source="pencil.png"
+                                       HeightRequest="20" />
+                                <Label Text="Items : " Grid.Column="0"
+                                       Grid.Row="1"/>
+                                <Label Text="0" Grid.Column="1"
+                                       Grid.Row="1"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border BackgroundColor="{StaticResource White}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding UpdateWorkHourTappedCommand}" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout Spacing="1">
+                            <Grid ColumnDefinitions="*,*"
+                                  RowDefinitions="*,*">
+                                <Label Text="Work Hours:" FontAttributes="Bold" />
+                                <Image Grid.Column="1"
+                                       Source="pencil.png"
+                                       HeightRequest="20"
+                                       HorizontalOptions="End"/>
+                                <HorizontalStackLayout Spacing="10"
+                                                       Grid.Row="1"
+                                                       Grid.Column="0">
+                                    <Label Text="Starts time : " />
+                                    <Label Text="" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="10"
+                                                       Grid.Row="1"
+                                                       Grid.Column="1">
+                                    <Label Text="Ends time : " />
+                                    <Label Text="" />
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border BackgroundColor="{StaticResource White}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding UpdateWorkCatalogTappedCommand}" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout Spacing="1">
+                            <Grid ColumnDefinitions="*,auto" RowDefinitions="*,*">
+                                <Label Text="Work Catalog/Photos:" FontAttributes="Bold" />
+                                <Image Grid.Column="1"
+                                       Source="pencil.png"
+                                       HeightRequest="20" />
+                                <Label Text="Items : " Grid.Column="0"
+                                       Grid.Row="1"/>
+                                <Label Text="0" Grid.Column="1"
+                                       Grid.Row="1"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+            </ScrollView>
+            <Button Text="Sign Out"
+                    Grid.Row="2"
+                    Margin="0,5,0,5" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
