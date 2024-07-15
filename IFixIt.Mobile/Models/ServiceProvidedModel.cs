@@ -83,7 +83,7 @@ public class ServiceProvider
 public class WorkingHour
 {
     public int serviceProviderId { get; set; }
-    public object start { get; set; }
-    public object end { get; set; }
+    public string start { get; set; }
+    public string end { get; set; }
 }
 
