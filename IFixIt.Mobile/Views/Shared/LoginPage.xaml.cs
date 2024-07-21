@@ -9,10 +9,9 @@ public partial class LoginPage : ContentPage
     public int SegmentButtonSelectedIndex { get; set; } = 0;
     private LoginServices _loginServices = new();
 
-    public LoginPage(LoginViewModel loginViewModel)
+    public LoginPage()
     {
         InitializeComponent();
-        BindingContext = loginViewModel;
     }
 
     private void BtnProviderType_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
@@ -60,5 +59,27 @@ public partial class LoginPage : ContentPage
         if (string.IsNullOrWhiteSpace(TxtEmail.Text)) return false;
         if (string.IsNullOrWhiteSpace(TxtPassword.Text)) return false;
         return true;
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        string email = Preferences.Get("email", "");
+        if (!string.IsNullOrWhiteSpace(email))
+        {
+            TxtEmail.Text = email;
+        }
+
+        TxtPassword.Text = string.Empty;
+    }
+
+    private void LblRegisterTapped_OnTapped(object? sender, TappedEventArgs e)
+    {
+        Shell.Current.Navigation.PushAsync(new RegisterPage(), true);
+    }
+
+    private void LblForgotPasswordTapped_OnTapped(object? sender, TappedEventArgs e)
+    {
+        Shell.Current.Navigation.PushAsync(new ForgotPasswordPage(), true);
     }
 }

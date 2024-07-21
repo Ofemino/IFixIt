@@ -14,21 +14,17 @@ public partial class ChangeDocumentationMopup
 
     private void VotersCardTapped_OnTapped(object? sender, TappedEventArgs e)
     {
-        throw new NotImplementedException();
     }
 
     private void CacDocumentTapped_OnTapped(object? sender, TappedEventArgs e)
     {
-        throw new NotImplementedException();
     }
 
     private void DriversLicenseTapped_OnTapped(object? sender, TappedEventArgs e)
     {
-        throw new NotImplementedException();
     }
 
     private void IdentityDocumentTapped_OnTapped(object? sender, TappedEventArgs e)
     {
-        throw new NotImplementedException();
     }
 }

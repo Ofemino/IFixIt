@@ -54,7 +54,7 @@
                         <Label x:Name="lblAccountPhone" />
                     </VerticalStackLayout>
                 </Border>
-                <Button Text="Sign Out" />
+                <Button Text="Sign Out" x:Name="BtnCustomerSignOut" Clicked="BtnCustomerSignOut_OnClicked" />
             </VerticalStackLayout>
         </Grid>
     </ContentPage.Content>

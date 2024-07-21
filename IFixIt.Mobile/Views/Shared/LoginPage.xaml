@@ -30,7 +30,8 @@
                         <Label Text="Forgot Password?" TextColor="{x:StaticResource Primary}" FontSize="Small"
                                HorizontalTextAlignment="End">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ForgotPasswordTapCommand}" />
+                                <TapGestureRecognizer x:Name="LblForgotPasswordTapped"
+                                                      Tapped="LblForgotPasswordTapped_OnTapped"/>
                             </Label.GestureRecognizers>
                         </Label>
 
@@ -69,7 +70,8 @@
                                FontSize="Small"
                                HorizontalTextAlignment="Center">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding RegisterTapCommand}" />
+                                <TapGestureRecognizer x:Name="LblRegisterTapped"
+                                                      Tapped="LblRegisterTapped_OnTapped"/>
                             </Label.GestureRecognizers>
                         </Label>
                     </VerticalStackLayout>

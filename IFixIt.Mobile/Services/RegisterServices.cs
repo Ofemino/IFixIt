@@ -2,6 +2,11 @@
 
 public class RegisterServices
 {
+
+    public RegisterServices()
+    {
+
+    }
     public async Task<int> DoSignUpClick(RegisterModel registerModel)
     {
 
