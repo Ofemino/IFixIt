@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plat4.Mobile.Views.Consumers.ServiceProviderProfilePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0"
+                       HeightRequest="100"
+                       WidthRequest="100"
+                       CornerRadius="50">
+                    <Image VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Source="default_avatar.png"
+                           Aspect="AspectFill"
+                           HeightRequest="100"
+                           WidthRequest="100" />
+                </Frame>
+                <VerticalStackLayout Grid.Row="1" VerticalOptions="Start"
+                                     Spacing="1">
+                   <Border BackgroundColor="{StaticResource BorderBackground}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <VerticalStackLayout Spacing="1">
+                            <Label Text="Business Name:" FontAttributes="Bold" />
+                            <Label x:Name="lblBusinessName" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border BackgroundColor="{StaticResource White}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <VerticalStackLayout Spacing="1">
+                            <Grid ColumnDefinitions="*,auto">
+                                <Label Text="Business Location:" FontAttributes="Bold" />
+                            </Grid>
+                            <Label x:Name="lblBusinessAddress" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border BackgroundColor="{StaticResource White}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <VerticalStackLayout Spacing="1">
+                            <Grid ColumnDefinitions="*,auto" RowDefinitions="*,*">
+                                <Label Text="Documentation:" FontAttributes="Bold" />
+                                <Label Text="Items : " Grid.Column="0"
+                                       Grid.Row="1"/>
+                                <Label x:Name="lblDocumentItemsCount" Grid.Column="1"
+                                       Grid.Row="1"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border BackgroundColor="{StaticResource White}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <VerticalStackLayout Spacing="1">
+                            <Grid ColumnDefinitions="*,*"
+                                  RowDefinitions="*,*">
+                                <Label Text="Work Hours:" FontAttributes="Bold" />
+                                <HorizontalStackLayout Spacing="10"
+                                                       Grid.Row="1"
+                                                       Grid.Column="0">
+                                    <Label Text="Starts time : " />
+                                    <Label x:Name="lblStartWorkTime" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="10"
+                                                       Grid.Row="1"
+                                                       Grid.Column="1">
+                                    <Label Text="Ends time : " />
+                                    <Label x:Name="lblEndWorkTime" />
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border BackgroundColor="{StaticResource White}"
+                            Padding="10"
+                            Stroke="{StaticResource Primary}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5">
+                        <VerticalStackLayout Spacing="1">
+                            <Grid ColumnDefinitions="*,auto" RowDefinitions="*,*">
+                                <Label Text="Work Catalog/Photos:" FontAttributes="Bold" />
+                                <Label Text="Items : " Grid.Column="0"
+                                       Grid.Row="1"/>
+                                <Label x:Name="lblWorkCatalogCount" Grid.Column="1"
+                                       Grid.Row="1"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

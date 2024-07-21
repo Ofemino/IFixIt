@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+       xmlns:consumers="clr-namespace:Plat4.Mobile.Views.Consumers"
+       xmlns:shared="clr-namespace:Plat4.Mobile.Views.Shared"
+       android:TabbedPage.ToolbarPlacement="Bottom"
+       x:Class="Plat4.Mobile.Views.Consumers.HomePage">
+    <TabBar>
+        <Tab Title="Services"
+             Shell.TabBarTitleColor="{StaticResource Primary}"
+             Shell.TabBarForegroundColor="{StaticResource Primary}"
+             Icon="add_behavior.png">
+            <ShellContent ContentTemplate="{DataTemplate consumers:ServicePage}" />
+        </Tab>
+        <Tab Title="Jobs"
+             Shell.TabBarTitleColor="{StaticResource Primary}"
+             Shell.TabBarForegroundColor="{StaticResource Primary}"
+             Icon="browser_sdk.png">
+            <ShellContent ContentTemplate="{DataTemplate consumers:JobsPage}" />
+        </Tab>
+        <Tab Title="Chats"
+             Shell.TabBarTitleColor="{StaticResource Primary}"
+             Shell.TabBarForegroundColor="{StaticResource Primary}"
+             Icon="callout_oval.png">
+            <ShellContent ContentTemplate="{DataTemplate shared:ChatPage}" />
+        </Tab>
+        <Tab Title="Support"
+             Shell.TabBarTitleColor="{StaticResource Primary}"
+             Shell.TabBarForegroundColor="{StaticResource Primary}"
+             Icon="call_browser_settings.png">
+            <ShellContent ContentTemplate="{DataTemplate consumers:SupportPage}" />
+        </Tab>
+        <Tab Title="Profile"
+             Shell.TabBarTitleColor="{StaticResource Primary}"
+             Shell.TabBarForegroundColor="{StaticResource Primary}"
+             Icon="contact_card.png">
+            <ShellContent ContentTemplate="{DataTemplate consumers:ProfilePage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

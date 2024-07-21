@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Plat4.Mobile.Models"
+             xmlns:vm="clr-namespace:Plat4.Mobile.ViewModels"
+             xmlns:card="clr-namespace:Syncfusion.Maui.Cards;assembly=Syncfusion.Maui.Cards"
+             x:Class="Plat4.Mobile.Views.Consumers.ProviderServicePage">
+    <!-- <ContentPage.BindingContext> -->
+    <!--     <vm:ProviderServicePageViewModel /> -->
+    <!-- </ContentPage.BindingContext> -->
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".8*" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Aspect="AspectFill"
+                       x:Name="ServiceImg" />
+                <Grid Grid.Row="1" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid ColumnDefinitions="15, 6*, 3*">
+                            <Image Grid.Column="0" Source="map_layer_wizard.png" HeightRequest="15" />
+                            <Label x:Name="LocationLbl" Grid.Column="1"
+                                   Margin="5,0"
+                                   VerticalTextAlignment="Start"
+                                   FontSize="12" FontAttributes="None" TextColor="{StaticResource Primary}" />
+                            <HorizontalStackLayout Grid.Column="2"
+                                                   HorizontalOptions="End">
+                                <Label x:Name="DistanceLbl"
+                                       FontSize="12" FontAttributes="None"
+                                       TextColor="{StaticResource Primary}" />
+                                <Label Text="miles away."
+                                       HorizontalTextAlignment="End"
+                                       FontSize="12" FontAttributes="None" TextColor="{StaticResource Primary}" />
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </Grid>
+                    <VerticalStackLayout Grid.Row="1"
+                                         Margin="5,0"
+                                         Spacing="5">
+                        <Label x:Name="CategoryLbl"
+                               FontSize="Title"
+                               Margin="0,15, 0,0" />
+
+                        <Label x:Name="SubCategoryLbl"
+                               FontSize="Medium"
+                               Margin="0,3, 0,0" />
+                        <CollectionView x:Name="CategoryTypeListCv">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5" />
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame CornerRadius="15" Padding="10,5"
+                                           BackgroundColor="{StaticResource Primary}">
+                                        <Label Text="{Binding .}" TextColor="White" />
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                        <Label x:Name="DescriptionLbl"
+                               FontSize="15"
+                               Margin="0,15,0,15" />
+                        <HorizontalStackLayout>
+                            <Label Text="Last seen : "
+                                   FontSize="13" />
+                            <Label x:Name="LastSeenLbl"
+                                   FontSize="13" />
+                        </HorizontalStackLayout>
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="20"
+                              Margin="0,0,0,20">
+                            <Button Grid.Column="0"
+                                    x:Name="BtnViewProfile"
+                                    Clicked="BtnViewProfile_OnClicked"
+                                    Text="View Profile" />
+                            <Button Grid.Column="1"
+                                    x:Name="BtnRequestJob"
+                                    Clicked="BtnRequestJob_OnClicked"
+                                    Text="Request A Job" />
+
+                        </Grid>
+                        <Line Stroke="{StaticResource Primary}"
+                              X2="400" />
+                        <Button x:Name="BtnRequestJobCatalog"
+                                Clicked="BtnRequestJobCatalog_OnClicked"
+                                Text="Request Job Catalogs"
+                                Margin="0,20,0,20"
+                                BackgroundColor="Transparent"
+                                TextColor="{StaticResource Primary}"
+                                BorderWidth="1"
+                                BorderColor="{StaticResource Primary}" />
+
+                        <Line Stroke="{StaticResource Primary}"
+                              X2="400" />
+
+                        <VerticalStackLayout Margin="0,10">
+                            <Label Text="Consumer's feedbacks : "
+                                   FontSize="13" />
+                            <CollectionView x:Name="ServiceProviderFeedbackCv"
+                                            Margin="10"
+                                            EmptyView="No feedbacks yet!">
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate x:DataType="model:ServiceProviderFeedbacks">
+                                        <card:SfCardView>
+                                        </card:SfCardView>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Grid>
+            </Grid>
+
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
