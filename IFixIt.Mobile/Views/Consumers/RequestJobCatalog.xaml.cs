@@ -1,6 +1,6 @@
 ﻿namespace IFixIt.Mobile.Views.Consumers;
 
-public partial class RequestJobCatalog : ContentPage
+public partial class RequestJobCatalog
 {
     private readonly int _providerId;
 
@@ -13,5 +13,10 @@ public partial class RequestJobCatalog : ContentPage
     {
         _providerId = providerId;
         InitializeComponent();
+    }
+
+    private void RequestJobCatalog_OnBackgroundClicked(object? sender, EventArgs e)
+    {
+        MopupService.Instance.PopAsync();
     }
 }

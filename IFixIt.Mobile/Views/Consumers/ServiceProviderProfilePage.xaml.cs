@@ -6,8 +6,6 @@ public partial class ServiceProviderProfilePage : ContentPage
     private ServiceProviderProfilePageService _providerService = new();
     private string _providerDocumentCount = string.Empty;
     private string _providerWorkCatalogCount = string.Empty;
-    private string _providerWorkStart = string.Empty;
-    private string _providerWorkEnds = string.Empty;
 
     public ServiceProviderProfilePage()
     {
@@ -38,8 +36,8 @@ public partial class ServiceProviderProfilePage : ContentPage
         _providerDocumentCount = GetProviderDocumentCount(providerProfile.id);
         _providerWorkCatalogCount = GetProviderWorkCatalogCount(providerProfile.id);
 
-
-        lblBusinessAddress.Text = string.IsNullOrEmpty(providerProfile.address) ? "N/A" : providerProfile.address;
+        Title = string.IsNullOrEmpty(providerProfile.companyName) ? "N/A" : providerProfile.companyName;
+        lblBusinessAddress.Text = string.IsNullOrEmpty(providerProfile.location) ? "N/A" : providerProfile.location;
         lblBusinessName.Text = string.IsNullOrEmpty(providerProfile.companyName) ? "N/A" : providerProfile.companyName;
         lblDocumentItemsCount.Text = string.IsNullOrEmpty(providerProfile.address) ? "0" : _providerDocumentCount;
         lblWorkCatalogCount.Text = string.IsNullOrEmpty(providerProfile.address) ? "0" : _providerWorkCatalogCount;
@@ -51,21 +49,18 @@ public partial class ServiceProviderProfilePage : ContentPage
         }
         else
         {
-            lblStartWorkTime.Text =  "8:00 AM";
-            lblEndWorkTime.Text =  "6:00 PM";
+            lblStartWorkTime.Text = "8:00 AM";
+            lblEndWorkTime.Text = "6:00 PM";
         }
-
     }
 
     private string GetProviderDocumentCount(int providerProfileId)
     {
-
         return string.Empty;
     }
 
     private string GetProviderWorkCatalogCount(int providerProfileId)
     {
-
         return string.Empty;
     }
 }

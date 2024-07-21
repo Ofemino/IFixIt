@@ -6,6 +6,7 @@
              xmlns:vm="clr-namespace:IFixIt.Mobile.ViewModels"
              xmlns:chk="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              x:DataType="vm:RegisterViewModel"
+             Title="Register to get started!"
              x:Class="IFixIt.Mobile.Views.Shared.RegisterPage">
     <ContentPage.Content>
         <ScrollView>
@@ -54,7 +55,8 @@
                         <inputLayout:SfTextInputLayout Hint="Confirm Password"
                                                        EnableHintAnimation="True"
                                                        HelperText="Confirm password.">
-                            <Entry IsPassword="True" x:Name="TxtConfirmPassword" Text="{Binding RegisterModel.Password}" />
+                            <Entry IsPassword="True" x:Name="TxtConfirmPassword"
+                                   Text="{Binding RegisterModel.Password}" />
                         </inputLayout:SfTextInputLayout>
 
 
@@ -63,9 +65,19 @@
                                                        HelperText="Enter referralCode.">
                             <Entry Keyboard="Text" x:Name="TxtReferralCode" Text="{Binding RegisterModel.ReferralCode}" />
                         </inputLayout:SfTextInputLayout>
+                        <HorizontalStackLayout Spacing="2" VerticalOptions="Center">
+                            <chk:SfCheckBox x:Name="ChbIAgree" StateChanged="ChbIAgree_OnStateChanged"
+                                            IsChecked="False"
+                                            Text="I agree to" />
+                            <Label Text="Terms and Conditions."
+                                   VerticalTextAlignment="Center"
+                                   TextColor="Blue">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="LblToc" Tapped="LblToc_OnTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </HorizontalStackLayout>
 
-                        <chk:SfCheckBox x:Name="ChbIAgree" StateChanged="ChbIAgree_OnStateChanged" IsChecked="False"
-                                        Text="I agree to Terms and Conditions." />
                         <Button x:Name="BtnRegister"
                                 Clicked="BtnRegister_OnClicked"
                                 FontAttributes="Bold" FontSize="Medium"

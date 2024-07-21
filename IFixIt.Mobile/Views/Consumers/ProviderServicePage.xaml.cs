@@ -39,7 +39,8 @@ public partial class ProviderServicePage
 
     private void BtnRequestJobCatalog_OnClicked(object? sender, EventArgs e)
     {
-        Shell.Current.Navigation.PushAsync(new RequestJobCatalog(selectedSp.id), true);
+        MopupService.Instance.PushAsync(new RequestJobCatalog(selectedSp.id), true);
+        // Shell.Current.Navigation.PushAsync(new RequestJobCatalog(selectedSp.id), true);
     }
 
     private void BtnViewProfile_OnClicked(object? sender, EventArgs e)
@@ -49,6 +50,7 @@ public partial class ProviderServicePage
 
     private void BtnRequestJob_OnClicked(object? sender, EventArgs e)
     {
-        Shell.Current.Navigation.PushAsync(new RequestAJobPage(selectedSp.id), true);
+        MopupService.Instance.PushAsync(new RequestAJobPage(selectedSp.id), true);
+        // Shell.Current.Navigation.PushAsync(new RequestAJobPage(selectedSp.id), true);
     }
 }

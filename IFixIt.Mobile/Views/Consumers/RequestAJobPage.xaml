@@ -1,9 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IFixIt.Mobile.Views.Consumers.RequestAJobPage">
+<pages:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="clr-namespace:Mopups.Pages;assembly=Mopups"
+                 xmlns:models="clr-namespace:IFixIt.Mobile.Models"
+                 BackgroundClicked="RequestAJobPage_OnBackgroundClicked"
+                 CloseWhenBackgroundIsClicked="True"
+                 BackgroundColor="Transparent"
+                 x:Class="IFixIt.Mobile.Views.Consumers.RequestAJobPage"
+                 >
     <ContentPage.Content>
-        
+        <Grid RowDefinitions="auto, * , auto"
+              Padding="10"
+              WidthRequest="350"
+              HeightRequest="350"
+              VerticalOptions="Center"
+              BackgroundColor="{StaticResource White}">
+            <Label Grid.Row="0" Text="Select a message."
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                   Margin="0,0,0,10"/>
+            <ScrollView Grid.Row="1"
+                        VerticalOptions="StartAndExpand">
+                <CollectionView ItemsSource="{Binding QuestionBanksList}"
+                                SelectedItem="{Binding SelectedCategory}"
+                                SelectionChangedCommand="{Binding LoadSubCategoryClickCommand}"
+                                SelectionMode="Single"
+                                EmptyView="No data available!">
+                    <CollectionView.Header>
+                    </CollectionView.Header>
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:RequestAJobPageQuestions">
+                            <Border Padding="5, 15" VerticalOptions="Center">
+                                <VerticalStackLayout VerticalOptions="Center">
+                                    <Label FontSize="Medium"
+                                           Text="{Binding Question}" />
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </ScrollView>
+            <Button Grid.Row="2"
+                    Text="Start A Request"
+                    VerticalOptions="End" />
+        </Grid>
     </ContentPage.Content>
-</ContentPage>
+</pages:PopupPage>

@@ -64,6 +64,7 @@ public static class MauiProgram
         Routing.RegisterRoute("SelectedServiceOptionsPage", typeof(SelectedServiceOptionsPage));
         Routing.RegisterRoute("ProviderServicePage", typeof(ProviderServicePage));
         Routing.RegisterRoute("ChatMessagesPage", typeof(ChatMessagesPage));
+        Routing.RegisterRoute("LoginPage", typeof(LoginPage));
 
 #if DEBUG
         builder.Logging.AddDebug();

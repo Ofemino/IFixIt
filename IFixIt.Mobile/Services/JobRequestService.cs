@@ -41,9 +41,15 @@ public class JobRequestService
     [
         new ProvidersJobRequestModel
         {
-            Id = 1, ProviderName="Joe Freeze Pipes", Category = "Home repair and Maintenance", SubCategory = "Plumbing",
-            CategoryTypes = string.Join(", ", ["Pipeline and sewage ", "Borehole drilling"]), JobStatus = "Ongoing",
-            Location = "2, Ajose Adeogun", RequestDateTime = DateTime.Now, ImageUrl = "ongoing_job.png"
+            Id = 1,
+            ProviderName="Joe Freeze Pipes",
+            Category = "Home repair and Maintenance",
+            SubCategory = "Plumbing",
+            CategoryTypes = string.Join(", ", ["Pipeline and sewage ", "Borehole drilling"]),
+            JobStatus = "Ongoing",
+            Location = "2, Ajose Adeogun",
+            RequestDateTime = DateTime.Now,
+            ImageUrl = "ongoing_job.png"
         },
         new ProvidersJobRequestModel
         {
