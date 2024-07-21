@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFixIt.Mobile", "IFixIt.Mobile\IFixIt.Mobile.csproj", "{640CC5CD-7976-4532-9A28-487C8CDEBC45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plat4.Mobile", "Plat4.Mobile\Plat4.Mobile.csproj", "{640CC5CD-7976-4532-9A28-487C8CDEBC45}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFIxIt.API", "IFIxIt.API\IFIxIt.API.csproj", "{67DEBEBB-E463-47B0-AAAD-D4C90CCF4798}"
 EndProject

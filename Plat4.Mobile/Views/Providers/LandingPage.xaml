@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cards="clr-namespace:Syncfusion.Maui.Cards;assembly=Syncfusion.Maui.Cards"
+             xmlns:models="clr-namespace:Plat4.Mobile.Models"
+             xmlns:viewModels="clr-namespace:Plat4.Mobile.ViewModels"
+             x:Class="Plat4.Mobile.Views.Providers.LandingPage">
+    <ContentPage.BindingContext>
+        <viewModels:ProvidersJobRequestViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="10" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+                   Text="Welcome Back!"
+                   FontSize="Medium"
+                   FontAttributes="Bold" />
+            <HorizontalStackLayout Grid.Row="1"
+                                   VerticalOptions="End">
+                <Label Text="Olufemi Benson"
+                       FontSize="15"
+                       FontAttributes="Bold" />
+
+                <Label Text="  -"
+                       FontSize="Small" />
+
+                <Label Text=" Bahdex Auto"
+                       FontSize="Small"
+                       TextColor="{StaticResource Primary}" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Grid.Row="2"
+                                   Spacing="5"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start"
+                                   Margin="0,20,0,0">
+                <Border BackgroundColor="White"
+                        Padding="10"
+                        Stroke="{StaticResource Primary}"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5">
+                    <VerticalStackLayout Spacing="3">
+                        <Label Text="Completed" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="1"
+                               HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+                </Border>
+                <Border BackgroundColor="White"
+                        Padding="10"
+                        Stroke="{StaticResource Primary}"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5">
+                    <VerticalStackLayout Spacing="3">
+                        <Label Text="Ongoing" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="1"
+                               HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+                </Border>
+                <Border BackgroundColor="White"
+                        Padding="10"
+                        Stroke="{StaticResource Primary}"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5">
+                    <VerticalStackLayout Spacing="3">
+                        <Label Text="Rejected" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="1"
+                               HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+                </Border>
+                <Border BackgroundColor="White"
+                        Padding="10"
+                        Stroke="{StaticResource Primary}"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 5">
+                    <VerticalStackLayout Spacing="3">
+                        <Label Text="Cancelled" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="1"
+                               HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+                </Border>
+            </HorizontalStackLayout>
+            <Label Grid.Row="3"
+                   Text="Jobs"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,0"/>
+            <ScrollView Grid.Row="4"
+                        Padding="0"
+                        Margin="0">
+                <CollectionView ItemsSource="{Binding JobRequestList}"
+                                SelectedItem="{Binding SelectedJobRequest}"
+                                SelectionChangedCommand="{Binding SelectedJobRequestClickCommand}"
+                                SelectionMode="Single"
+                                EmptyView="No jobs available yet!">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:ProvidersJobRequestModel">
+                            <cards:SfCardView>
+                                <Grid ColumnDefinitions=".15*,.85*"
+                                      ColumnSpacing="5">
+                                    <Image Source="{Binding ImageUrl}"
+                                           Grid.Column="0"
+                                           Aspect="AspectFill"
+                                           HeightRequest="30"
+                                           WidthRequest="30" />
+                                    <VerticalStackLayout Grid.Column="1" Spacing="3"
+                                                         Margin="5">
+                                        <Label FontSize="20"
+                                               FontAttributes="Bold"
+                                               Text="{Binding ProviderName}" />
+                                        <HorizontalStackLayout Spacing="10">
+                                            <Label FontSize="Medium"
+                                                   FontAttributes="Bold"
+                                                   Text="{Binding Category}" />
+                                            <!-- <Label FontSize="15" -->
+                                            <!--        Text="{Binding SubCategory}" -->
+                                            <!--        HorizontalTextAlignment="Start" /> -->
+                                        </HorizontalStackLayout>
+
+                                        <Label FontSize="15"
+                                               Text="{Binding CategoryTypes}"
+                                               HorizontalTextAlignment="Start" />
+                                        <Label FontSize="15"
+                                               Text="{Binding RequestDateTime}"
+                                               HorizontalTextAlignment="Start" />
+
+                                        <Grid ColumnDefinitions="auto,auto,auto">
+                                            <HorizontalStackLayout Grid.Column="0" VerticalOptions="Center">
+                                                <Label
+                                                    Text="{Binding JobStatus}"
+                                                    BackgroundColor="Transparent"
+                                                    TextColor="{StaticResource Primary}" />
+                                            </HorizontalStackLayout>
+                                            <HorizontalStackLayout Grid.Column="1" VerticalOptions="Center"
+                                                                   Margin="10,0">
+                                                <Label
+                                                    Text="{Binding Location}"
+                                                    BackgroundColor="Transparent"
+                                                    TextColor="{StaticResource Primary}" />
+
+                                            </HorizontalStackLayout>
+                                            <Label Grid.Column="2"
+                                                   VerticalOptions="Center"
+                                                   HorizontalTextAlignment="End"
+                                                   Text="View"
+                                                   BackgroundColor="Transparent"
+                                                   TextColor="{StaticResource Primary}"
+                                                   Margin="5,0" />
+                                        </Grid>
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </cards:SfCardView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
