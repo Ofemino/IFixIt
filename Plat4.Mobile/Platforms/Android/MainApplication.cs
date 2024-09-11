@@ -5,8 +5,11 @@ using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 
 namespace Plat4.Mobile;
-
+#if DEBUG
+[Application(UsesCleartextTraffic = true)]
+#else
 [Application]
+#endif
 public class MainApplication : MauiApplication
 {
     public MainApplication(IntPtr handle, JniHandleOwnership ownership)
