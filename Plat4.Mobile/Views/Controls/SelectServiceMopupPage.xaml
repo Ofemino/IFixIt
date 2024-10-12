@@ -42,11 +42,21 @@
                                                     SelectionMode="Single"
                                                     EmptyView="No data available!">
                                         <CollectionView.Header>
-                                            <VerticalStackLayout>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="45" />
+                                                </Grid.ColumnDefinitions>
                                                 <Label Text="Select a category:"
                                                        FontSize="Medium"
-                                                       FontAttributes="Bold" />
-                                            </VerticalStackLayout>
+                                                       FontAttributes="Bold" Grid.Column="0"
+                                                       HorizontalOptions="Start"
+                                                       VerticalOptions="Start" />
+                                                <ImageButton Grid.Column="1" Source="search"
+                                                             HeightRequest="20" WidthRequest="20"
+                                                             HorizontalOptions="End"
+                                                             VerticalOptions="Start" />
+                                            </Grid>
                                         </CollectionView.Header>
                                         <CollectionView.ItemsLayout>
                                             <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
@@ -77,11 +87,20 @@
                                                 SelectionMode="Single"
                                                 EmptyView="No data available!">
                                     <CollectionView.Header>
-                                        <VerticalStackLayout>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="45" />
+                                            </Grid.ColumnDefinitions>
                                             <Label Text="Select a sub category:"
                                                    FontSize="Medium"
-                                                   FontAttributes="Bold" />
-                                        </VerticalStackLayout>
+                                                   FontAttributes="Bold" HorizontalOptions="Start"
+                                                   VerticalOptions="Start" />
+                                            <ImageButton Grid.Column="1" Source="search"
+                                                         HeightRequest="20" WidthRequest="20"
+                                                         HorizontalOptions="End"
+                                                         VerticalOptions="Start" />
+                                        </Grid>
                                     </CollectionView.Header>
                                     <CollectionView.ItemsLayout>
                                         <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
@@ -111,11 +130,20 @@
                                                 SelectionMode="Single"
                                                 EmptyView="No data available!">
                                     <CollectionView.Header>
-                                        <VerticalStackLayout>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="45"/>
+                                            </Grid.ColumnDefinitions>
                                             <Label Text="Select a category type:"
                                                    FontSize="Medium"
-                                                   FontAttributes="Bold" />
-                                        </VerticalStackLayout>
+                                                   FontAttributes="Bold" HorizontalOptions="Start"
+                                                   VerticalOptions="Start" />
+                                            <ImageButton Grid.Column="1" Source="search"
+                                                         HeightRequest="20" WidthRequest="20"
+                                                         HorizontalOptions="End"
+                                                         VerticalOptions="Start" />
+                                        </Grid>
                                     </CollectionView.Header>
                                     <CollectionView.ItemsLayout>
                                         <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />

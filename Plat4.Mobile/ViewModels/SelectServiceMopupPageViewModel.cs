@@ -30,7 +30,7 @@ public partial class SelectServiceMopupPageViewModel : ObservableObject
         var serviceCategoryList = await _servicePageServices.GetServiceCategoryList();
         if (serviceCategoryList == null)
         {
-            App.Current.MainPage.DisplayAlert("plat4", "Unable to get service details, check your internet", "Ok");
+            App.Current.MainPage.DisplayAlert("Plat4", "Unable to get service details, check your internet", "Ok");
             MopupService.Instance.PopAsync();
         }
 

@@ -1,7 +1,5 @@
 ﻿using Plat4.Mobile.DataTransferObjects;
-using Plat4.Mobile.Services;
 using Plat4.Mobile.Views.Consumers;
-using Plat4.Mobile.Views.Providers;
 using SelectionChangedEventArgs = Syncfusion.Maui.Buttons.SelectionChangedEventArgs;
 
 namespace Plat4.Mobile.Views.Shared;
@@ -18,7 +16,7 @@ public partial class LoginPage : ContentPage
 
     private void BtnProviderType_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
-        SegmentButtonSelectedIndex = (int)e.NewIndex;
+        SegmentButtonSelectedIndex = (int)e.NewIndex!;
         // DisplayAlert("Selected", $"item : {SegmentButtonSelectedIndex}", "Ok");
     }
 
