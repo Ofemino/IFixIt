@@ -1,6 +1,4 @@
-﻿using Plat4.Mobile.Models;
-using Plat4.Mobile.Services;
-using Plat4.Mobile.Views.Consumers;
+﻿using Plat4.Mobile.Views.Consumers;
 
 namespace Plat4.Mobile.ViewModels;
 
