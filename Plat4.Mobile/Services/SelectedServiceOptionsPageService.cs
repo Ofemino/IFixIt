@@ -126,7 +126,9 @@ public class SelectedServiceOptionsPageService
             var pLoad = new JobRequestPayload
             {
                 Long = loc.Longitude, Lat = loc.Latitude,
-                CategoryTypes = "", CategoryId = opt.CategoryId, SubCategoryId = opt.SubCategoryId,
+                CategoryTypes = opt.CategoryNames,
+                CategoryId = opt.CategoryId,
+                SubCategoryId = opt.SubCategoryId,
                 ConsumerEmail = opt.Email, RequestDateTime = DateTimeOffset.Now
             };
 
@@ -189,6 +191,7 @@ public class SelectedServiceOptionsPageService
         catch (FeatureNotEnabledException fneEx)
         {
             // Handle not enabled on device exception
+            
         }
         catch (PermissionException pEx)
         {

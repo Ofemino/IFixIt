@@ -177,12 +177,17 @@
                     </Label>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Grid.Row="1" IsVisible="True">
-                    <Label Text="Selected Category : " /><Label Text="{Binding SelectedCategory.Name}" />
+                    <Label Text="Selected Category : " />
+                    <Label Text="{Binding SelectedCategory.Name}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Grid.Row="2" IsVisible="True">
                     <Label Text="Selected subcategory : " /> <Label Text="{Binding SelectedSubCategory.Name}" />
                 </HorizontalStackLayout>
-                <VerticalStackLayout Grid.Row="3" IsVisible="True">
+
+                <HorizontalStackLayout Grid.Row="3" IsVisible="True">
+                    <Label Text="Category Type : " /> <Label Text="{Binding SelectedCategoryTypes.Name}" />
+                </HorizontalStackLayout>
+                <!--<VerticalStackLayout Grid.Row="3" IsVisible="True">
                     <HorizontalStackLayout VerticalOptions="Center">
                         <Label Text="Selected Category type : " VerticalTextAlignment="Center" />
                         <ScrollView VerticalOptions="Center">
@@ -206,7 +211,7 @@
                             </CollectionView>
                         </ScrollView>
                     </HorizontalStackLayout>
-                </VerticalStackLayout>
+                </VerticalStackLayout>-->
             </Grid>
             <Button Grid.Row="3" VerticalOptions="End"
                     Text="Search For Providers"

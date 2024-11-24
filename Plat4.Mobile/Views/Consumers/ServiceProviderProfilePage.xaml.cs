@@ -40,20 +40,20 @@ public partial class ServiceProviderProfilePage : ContentPage
         _providerWorkCatalogCount = GetProviderWorkCatalogCount(providerProfile.id);
 
         Title = string.IsNullOrEmpty(providerProfile.companyName) ? "N/A" : providerProfile.companyName;
-        lblBusinessAddress.Text = string.IsNullOrEmpty(providerProfile.location) ? "N/A" : providerProfile.location;
-        lblBusinessName.Text = string.IsNullOrEmpty(providerProfile.companyName) ? "N/A" : providerProfile.companyName;
-        lblDocumentItemsCount.Text = string.IsNullOrEmpty(providerProfile.address) ? "0" : _providerDocumentCount;
-        lblWorkCatalogCount.Text = string.IsNullOrEmpty(providerProfile.address) ? "0" : _providerWorkCatalogCount;
+        LblBusinessAddress.Text = string.IsNullOrEmpty(providerProfile.location) ? "N/A" : providerProfile.location;
+        LblBusinessName.Text = string.IsNullOrEmpty(providerProfile.companyName) ? "N/A" : providerProfile.companyName;
+        LblDocumentItemsCount.Text = string.IsNullOrEmpty(providerProfile.address) ? "0" : _providerDocumentCount;
+        LblWorkCatalogCount.Text = string.IsNullOrEmpty(providerProfile.address) ? "0" : _providerWorkCatalogCount;
 
         if (providerProfile.workingHour != null)
         {
-            lblStartWorkTime.Text = providerProfile.workingHour.start;
-            lblEndWorkTime.Text = providerProfile.workingHour.end;
+            LblStartWorkTime.Text = providerProfile.workingHour.start;
+            LblEndWorkTime.Text = providerProfile.workingHour.end;
         }
         else
         {
-            lblStartWorkTime.Text = "8:00 AM";
-            lblEndWorkTime.Text = "6:00 PM";
+            LblStartWorkTime.Text = "8:00 AM";
+            LblEndWorkTime.Text = "6:00 PM";
         }
     }
 

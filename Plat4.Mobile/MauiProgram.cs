@@ -1,14 +1,9 @@
 ﻿using CommunityToolkit.Maui;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Controls.Hosting;
-using Microsoft.Maui.Hosting;
-using Plat4.Mobile.Services;
-using Plat4.Mobile.ViewModels;
 using Plat4.Mobile.Views.Consumers;
 using Plat4.Mobile.Views.Controls;
-using Plat4.Mobile.Views.Providers;
 using Plat4.Mobile.Views.Shared;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 using Syncfusion.Maui.Core.Hosting;
 
 namespace Plat4.Mobile;
@@ -20,6 +15,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseSkiaSharp()
             .UseMauiCommunityToolkit()
             .ConfigureSyncfusionCore()
             .UseMauiMaps()

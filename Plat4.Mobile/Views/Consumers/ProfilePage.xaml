@@ -31,7 +31,7 @@
                         StrokeShape="RoundRectangle 5">
                     <VerticalStackLayout Spacing="10">
                         <Label Text="Account name:" FontAttributes="Bold" />
-                        <Label x:Name="lblAccountName" />
+                        <Label x:Name="LblAccountName" />
                     </VerticalStackLayout>
                 </Border>
                 <Border BackgroundColor="White"
@@ -41,7 +41,7 @@
                         StrokeShape="RoundRectangle 5">
                     <VerticalStackLayout Spacing="10">
                         <Label Text="Account email:" FontAttributes="Bold" />
-                        <Label x:Name="lblAccountEmail" />
+                        <Label x:Name="LblAccountEmail" />
                     </VerticalStackLayout>
                 </Border>
                 <Border BackgroundColor="White"
@@ -51,7 +51,7 @@
                         StrokeShape="RoundRectangle 5">
                     <VerticalStackLayout Spacing="10">
                         <Label Text="Phone number:" FontAttributes="Bold" />
-                        <Label x:Name="lblAccountPhone" />
+                        <Label x:Name="LblAccountPhone" />
                     </VerticalStackLayout>
                 </Border>
                 <Button Text="Sign Out" x:Name="BtnCustomerSignOut" Clicked="BtnCustomerSignOut_OnClicked" />

@@ -10,7 +10,7 @@ namespace Plat4.Mobile.Services;
 
 public class LoginServices
 {
-    HttpClient _client;
+    private readonly HttpClient _client;
     JsonSerializerOptions _serializerOptions;
 
     public LoginServices()

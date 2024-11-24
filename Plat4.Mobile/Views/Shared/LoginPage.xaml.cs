@@ -7,7 +7,7 @@ namespace Plat4.Mobile.Views.Shared;
 public partial class LoginPage : ContentPage
 {
     public int SegmentButtonSelectedIndex { get; set; } = 0;
-    private LoginServices _loginServices = new();
+    private readonly LoginServices _loginServices = new();
 
     public LoginPage()
     {
@@ -22,10 +22,7 @@ public partial class LoginPage : ContentPage
 
     private void BtnLogin_OnClicked(object? sender, EventArgs e)
     {
-        if (SegmentButtonSelectedIndex == 1)
-            DoLogin("PROVIDER");
-        else
-            DoLogin("CONSUMER");
+        DoLogin(SegmentButtonSelectedIndex == 1 ? "PROVIDER" : "CONSUMER");
     }
 
 
@@ -33,7 +30,7 @@ public partial class LoginPage : ContentPage
     {
         bool isValid = DoValidation();
         if (!isValid)
-            DisplayAlert("Login Details", "Please check user email or password!", "Ok");
+            await DisplayAlert("Login Details", "Please check user email or password!", "Ok");
 
         var appUser = new UserLogin
         {
@@ -50,7 +47,7 @@ public partial class LoginPage : ContentPage
         }
         else
         {
-            DisplayAlert("Alert!", "Something went wrong, check your login details.", "Ok");
+            await DisplayAlert("Alert!", "Something went wrong, check your login details.", "Ok");
         }
     }
 

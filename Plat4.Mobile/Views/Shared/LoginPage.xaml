@@ -3,6 +3,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              xmlns:vm="clr-namespace:Plat4.Mobile.ViewModels"
              x:DataType="vm:LoginViewModel"
              x:Class="Plat4.Mobile.Views.Shared.LoginPage"
@@ -14,6 +15,14 @@
                     <RowDefinition Height="3*"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
+                <!-- Lottie anim -->
+                <skia:SKLottieView Grid.Row="0"
+                                   Source="painter.json"
+                                   Height="150"
+                                   Width="150"
+                                   HorizontalOptions="Center"
+                                   RepeatCount="-1" RepeatMode="Restart"/>
+
                 <Frame Grid.Row="1" Padding="20, 20, 20, 40" Margin="10" BorderColor="LightGray" CornerRadius="30">
                     <VerticalStackLayout Spacing="20" VerticalOptions="Start">
                         <Label Text="Login" FontSize="32" FontAttributes="Bold" VerticalTextAlignment="Center" />
@@ -31,7 +40,7 @@
                                HorizontalTextAlignment="End">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer x:Name="LblForgotPasswordTapped"
-                                                      Tapped="LblForgotPasswordTapped_OnTapped"/>
+                                                      Tapped="LblForgotPasswordTapped_OnTapped" />
                             </Label.GestureRecognizers>
                         </Label>
 
@@ -71,7 +80,7 @@
                                HorizontalTextAlignment="Center">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer x:Name="LblRegisterTapped"
-                                                      Tapped="LblRegisterTapped_OnTapped"/>
+                                                      Tapped="LblRegisterTapped_OnTapped" />
                             </Label.GestureRecognizers>
                         </Label>
                     </VerticalStackLayout>

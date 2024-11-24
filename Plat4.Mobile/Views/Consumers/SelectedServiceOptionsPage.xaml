@@ -6,9 +6,14 @@
              xmlns:models="clr-namespace:Plat4.Mobile.Models"
              x:Class="Plat4.Mobile.Views.Consumers.SelectedServiceOptionsPage"
              Title="Service Option Providers">
+
+    <ContentPage.Resources>
+        <models:Base64StringToImageSourceConverter x:Key="Base64StringToImageSourceConverter" />
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <ScrollView VerticalOptions="Start">
-            <CollectionView x:Name="providersView"
+            <CollectionView x:Name="ProvidersView"
                             Margin="10"
                             SelectionChanged="ProvidersView_OnSelectionChanged"
                             SelectionMode="Single"
@@ -21,11 +26,12 @@
                         <card:SfCardView>
                             <Grid ColumnDefinitions=".35*,.65*"
                                   ColumnSpacing="10">
-                                <Image Source="{Binding imageUrl1}"
-                                       Grid.Column="0"
-                                       Aspect="AspectFill"
-                                       HeightRequest="150"
-                                       WidthRequest="150" />
+                                <Image
+                                    Source="{Binding picture, Converter={StaticResource Base64StringToImageSourceConverter}}"
+                                    Grid.Column="0"
+                                    Aspect="AspectFill"
+                                    HeightRequest="130"
+                                    WidthRequest="130" />
                                 <Grid Grid.Column="1" RowDefinitions=".1*,.1*,.3*,.1*"
                                       Margin="10">
                                     <Label FontSize="Medium"
@@ -66,7 +72,7 @@
                                                Text="Message"
                                                BackgroundColor="Transparent"
                                                TextColor="{StaticResource Primary}"
-                                               Margin="5,0"/>
+                                               Margin="5,0" />
                                     </Grid>
                                 </Grid>
                             </Grid>

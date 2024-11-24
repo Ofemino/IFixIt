@@ -31,7 +31,7 @@
                             StrokeShape="RoundRectangle 5">
                         <VerticalStackLayout Spacing="1">
                             <Label Text="Business Name:" FontAttributes="Bold" />
-                            <Label x:Name="lblBusinessName" />
+                            <Label x:Name="LblBusinessName" />
                         </VerticalStackLayout>
                     </Border>
                     <Border BackgroundColor="{StaticResource White}"
@@ -43,7 +43,7 @@
                             <Grid ColumnDefinitions="*,auto">
                                 <Label Text="Business Location:" FontAttributes="Bold" />
                             </Grid>
-                            <Label x:Name="lblBusinessAddress" />
+                            <Label x:Name="LblBusinessAddress" />
                         </VerticalStackLayout>
                     </Border>
                     <Border BackgroundColor="{StaticResource White}"
@@ -56,7 +56,7 @@
                                 <Label Text="Documentation:" FontAttributes="Bold" />
                                 <Label Text="Items : " Grid.Column="0"
                                        Grid.Row="1"/>
-                                <Label x:Name="lblDocumentItemsCount" Grid.Column="1"
+                                <Label x:Name="LblDocumentItemsCount" Grid.Column="1"
                                        Grid.Row="1"/>
                             </Grid>
                         </VerticalStackLayout>
@@ -74,13 +74,13 @@
                                                        Grid.Row="1"
                                                        Grid.Column="0">
                                     <Label Text="Starts time : " />
-                                    <Label x:Name="lblStartWorkTime" />
+                                    <Label x:Name="LblStartWorkTime" />
                                 </HorizontalStackLayout>
                                 <HorizontalStackLayout Spacing="10"
                                                        Grid.Row="1"
                                                        Grid.Column="1">
                                     <Label Text="Ends time : " />
-                                    <Label x:Name="lblEndWorkTime" />
+                                    <Label x:Name="LblEndWorkTime" />
                                 </HorizontalStackLayout>
                             </Grid>
                         </VerticalStackLayout>
@@ -95,7 +95,7 @@
                                 <Label Text="Work Catalog/Photos:" FontAttributes="Bold" />
                                 <Label Text="Items : " Grid.Column="0"
                                        Grid.Row="1"/>
-                                <Label x:Name="lblWorkCatalogCount" Grid.Column="1"
+                                <Label x:Name="LblWorkCatalogCount" Grid.Column="1"
                                        Grid.Row="1"/>
                             </Grid>
                         </VerticalStackLayout>

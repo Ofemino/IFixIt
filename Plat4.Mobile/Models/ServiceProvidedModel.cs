@@ -1,4 +1,6 @@
-﻿namespace Plat4.Mobile.Models;
+﻿using System.Globalization;
+
+namespace Plat4.Mobile.Models;
 
 // public class ServiceProvidedModel
 // {
@@ -21,7 +23,6 @@
 //     public string? PageTitle { get; set; }
 //     public bool IsPromoted { get; set; }
 // }
-
 
 public class ServiceProvidedModel
 {
@@ -74,10 +75,27 @@ public class ServiceProvider
     public string location { get; set; }
     public string isPromoted { get; set; }
     public bool isDeleted { get; set; }
-    public string isVerified { get; set; }
+    public string? isVerified { get; set; }
     public double distance { get; set; }
-    public WorkingHour workingHour { get; set; }
-    public string picture { get; set; }
+    public WorkingHour? workingHour { get; set; }
+
+    public string? picture { get; set; }
+
+    public ImageSource? Picture { get; set; }
+    public string? ServiceProvidedDescription { get; set; }
+
+    public ImageSource ConvertB64ToStreamImage()
+    {
+        if (!string.IsNullOrEmpty(this.picture))
+        {
+            var imageBytes = Convert.FromBase64String(this.picture);
+            MemoryStream imageDecodeStream = new(imageBytes);
+            // this.Picture = ImageSource.FromStream(() => imageDecodeStream);
+            return ImageSource.FromStream(() => imageDecodeStream);
+        }
+
+        return new FileImageSource();
+    }
 }
 
 public class WorkingHour
@@ -87,3 +105,17 @@ public class WorkingHour
     public string end { get; set; }
 }
 
+public class Base64StringToImageSourceConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        var base64 = (string)value;
+        return ImageSource.FromStream(
+            () => new MemoryStream(System.Convert.FromBase64String(base64)));
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotSupportedException();
+    }
+}

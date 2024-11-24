@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="http://schemas.syncfusion.com/maui"
              x:Class="Plat4.Mobile.Views.Controls.ParentCategoryTemplateSelector">
-    <buttons:SfRadioGroup x:Name="rGrpParentCategory"
+    <buttons:SfRadioGroup x:Name="RGrpParentCategory"
                                HorizontalOptions="CenterAndExpand">
         <buttons:SfRadioButton Text="A" />
         <buttons:SfRadioButton Text="B" />

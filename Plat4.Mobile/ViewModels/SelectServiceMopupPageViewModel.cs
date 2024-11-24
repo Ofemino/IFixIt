@@ -115,7 +115,7 @@ public partial class SelectServiceMopupPageViewModel : ObservableObject
     {
         var selectOptions = new SelectedServiceOptions
         {
-            CategoryNames = CategoryNames[0],
+            CategoryNames = SelectedCategoryTypes.Id.ToString(), //CategoryNames[0],
             SubCategoryId = selectedSubCategory.Id.ToString(),
             CategoryId = selectedCategory.Id.ToString()
 

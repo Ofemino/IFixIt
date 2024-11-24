@@ -18,17 +18,27 @@ public partial class ProviderServicePage
         BindingContext = _pageViewModel;
 
         Title = this.selectedSp.companyName;
-        ServiceImg.Source = this.selectedSp.imageUrl1;
-        LocationLbl.Text = this.selectedSp.address;
+        ServiceImg.Source = this.selectedSp.ConvertB64ToStreamImage();
+        var selectedSpAddress = this.selectedSp.address;
+        if (selectedSpAddress != null) LocationLbl.Text = selectedSpAddress;
         DistanceLbl.Text = this.selectedSp.distance.ToString();
         CategoryLbl.Text = this.selectedSp.category;
         SubCategoryLbl.Text = this.selectedSp.subCategory;
 
-        CategoryTypeListCv.ItemsSource = this.selectedSp.categoryTypeList1;
+        var selectedSpServiceProvidedDescription = this.selectedSp.ServiceProvidedDescription;
+        if (selectedSpServiceProvidedDescription != null)
+        {
+            if(selectedSpServiceProvidedDescription.Contains("/"))
+            {
+                CategoryTypeListCv.ItemsSource =
+                    selectedSpServiceProvidedDescription.Split('/').ToList();
+            }
+            else
+            {
+                CategoryTypeListCv.ItemsSource = new string[] {selectedSpServiceProvidedDescription };
+            }
+        }//this.selectedSp.categoryTypeList1;
         DescriptionLbl.Text = this.selectedSp.description;
-        // LastSeenLbl.Text = this.selectedSp.lastSeen;
-
-        // ServiceProviderFeedbackCv.ItemsSource = _selectedSp.ServiceProviderFeedbackList;
     }
 
     private ProviderServicePageViewModel _pageViewModel;

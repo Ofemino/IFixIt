@@ -1,8 +1,4 @@
-﻿using Plat4.Mobile.Models;
-using Plat4.Mobile.Services;
-using Plat4.Mobile.ViewModels;
-using Models_ServiceProvider = Plat4.Mobile.Models.ServiceProvider;
-using ServiceProvider = Plat4.Mobile.Models.ServiceProvider;
+﻿using Models_ServiceProvider = Plat4.Mobile.Models.ServiceProvider;
 
 namespace Plat4.Mobile.Views.Consumers;
 
@@ -27,8 +23,8 @@ public partial class SelectedServiceOptionsPage : ContentPage
         var providers = await OptionsPageService.GetSelectedServiceOption(_selectOptions);
         if (providers.Count > 0)
         {
-            providersView.ItemsSource = providers;
-            providersView.SelectionChanged += (sender, args) =>
+            ProvidersView.ItemsSource = providers;
+            ProvidersView.SelectionChanged += (sender, args) =>
             {
                 // _selectedProviderItem = (ServiceProvider)providersView.SelectedItem;
             };
@@ -38,7 +34,7 @@ public partial class SelectedServiceOptionsPage : ContentPage
 
     private void ProvidersView_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
-        _selectedProviderItem = (Models_ServiceProvider)providersView.SelectedItem;
+        _selectedProviderItem = (Models_ServiceProvider)ProvidersView.SelectedItem;
         if (_selectedProviderItem != null)
         {
             Shell.Current.Navigation.PushAsync(new ProviderServicePage(_selectedProviderItem), true);

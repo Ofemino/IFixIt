@@ -9,9 +9,14 @@
         <viewModels:ChatMessagesPageViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <chat:SfChat x:Name="sfChat"
+        <chat:SfChat x:Name="SfChat"
                      ShowTimeBreak="True"
-                     MessageSpacing="24"
+                     ShowAttachmentButton="True"
+                     AttachmentButtonClicked="sfChat_AttachmentButtonClicked"
+                     ImageTapped="sfChat_ImageTapped"
+                     MessageShape="DualTearDrop"
+                     MessageLongPressed="sfChat_MessageLongPressed"
+                     MessageSpacing="20"
                      Messages="{Binding Messages}"
                      CurrentUser="{Binding CurrentUser}"
                      ShowKeyboardAlways="False"

@@ -32,7 +32,7 @@
                        StrokeThickness="1"
                        StrokeShape="RoundRectangle 5">
                    <Border.GestureRecognizers>
-                       <TapGestureRecognizer x:Name="lblFacebook" Tapped="LblFacebook_OnTapped" />
+                       <TapGestureRecognizer x:Name="LblFacebook" Tapped="LblFacebook_OnTapped" />
                    </Border.GestureRecognizers>
 
                    <Label Text="Reach us on facebook"/>
@@ -43,7 +43,7 @@
                        StrokeThickness="1"
                        StrokeShape="RoundRectangle 5">
                    <Border.GestureRecognizers>
-                       <TapGestureRecognizer x:Name="lblEmail" Tapped="LblEmail_OnTapped" />
+                       <TapGestureRecognizer x:Name="LblEmail" Tapped="LblEmail_OnTapped" />
                    </Border.GestureRecognizers>
                    <Label Text="Send us an email"/>
                </Border>
@@ -53,7 +53,7 @@
                        StrokeThickness="1"
                        StrokeShape="RoundRectangle 5">
                    <Border.GestureRecognizers>
-                       <TapGestureRecognizer x:Name="lblWhatsapp" Tapped="LblWhatsapp_OnTapped" />
+                       <TapGestureRecognizer x:Name="LblWhatsapp" Tapped="LblWhatsapp_OnTapped" />
                    </Border.GestureRecognizers>
                    <Label Text="Chat us on Whatsapp"/>
                </Border>

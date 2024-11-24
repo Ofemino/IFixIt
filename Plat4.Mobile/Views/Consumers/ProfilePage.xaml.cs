@@ -12,9 +12,9 @@ public partial class ProfilePage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        lblAccountEmail.Text = Preferences.Get("email", "");
-        lblAccountName.Text = Preferences.Get("fullname", "");
-        lblAccountPhone.Text = Preferences.Get("phoneNumber", "");
+        LblAccountEmail.Text = Preferences.Get("email", "");
+        LblAccountName.Text = Preferences.Get("fullname", "");
+        LblAccountPhone.Text = Preferences.Get("phoneNumber", "");
     }
 
     private async void BtnCustomerSignOut_OnClicked(object? sender, EventArgs e)
