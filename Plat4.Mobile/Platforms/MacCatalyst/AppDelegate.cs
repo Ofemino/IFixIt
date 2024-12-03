@@ -1,4 +1,7 @@
-﻿using Foundation;
+﻿using Android.Runtime;
+using Foundation;
+using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
 
 namespace Plat4.Mobile;
 

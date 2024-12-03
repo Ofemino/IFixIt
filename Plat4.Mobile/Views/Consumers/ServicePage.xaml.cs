@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using Plat4.Mobile.ViewModels;
+﻿using Microsoft.Maui.Storage;
 
 namespace Plat4.Mobile.Views.Consumers;
 

@@ -1,4 +1,6 @@
-﻿namespace Plat4.Mobile.Utilities;
+﻿using Microsoft.Maui.Devices;
+
+namespace Plat4.Mobile.Utilities;
 
 public static class ConstantObject
 {

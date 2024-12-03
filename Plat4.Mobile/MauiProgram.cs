@@ -1,5 +1,8 @@
 ﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Controls.Hosting;
+using Microsoft.Maui.Hosting;
 using Plat4.Mobile.Views.Consumers;
 using Plat4.Mobile.Views.Controls;
 using Plat4.Mobile.Views.Shared;

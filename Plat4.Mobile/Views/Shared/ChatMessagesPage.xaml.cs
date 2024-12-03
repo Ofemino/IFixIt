@@ -1,4 +1,5 @@
-﻿using Plat4.Mobile.ViewModels;
+﻿using Microsoft.Maui.Storage;
+using Plat4.Mobile.ViewModels;
 using Syncfusion.Maui.Chat.Internals;
 
 namespace Plat4.Mobile.Views.Shared;

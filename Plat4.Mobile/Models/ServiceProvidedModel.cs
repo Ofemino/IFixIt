@@ -1,10 +1,11 @@
 ﻿using System.Globalization;
+using System.IO;
 
 namespace Plat4.Mobile.Models;
 
 // public class ServiceProvidedModel
 // {
-//     public int Id { get; set; }
+//     public int ID { get; set; }
 //     public int ServiceProviderId { get; set; }
 //     public string? Name { get; set; }
 //     public string? LastSeen { get; set; }

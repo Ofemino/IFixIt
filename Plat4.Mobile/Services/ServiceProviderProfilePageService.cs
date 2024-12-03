@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Net.Http;
 using Newtonsoft.Json;
 using Plat4.Mobile.DataTransferObjects;
 using Plat4.Mobile.Models;

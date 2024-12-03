@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using Microsoft.Maui.ApplicationModel;
 using Newtonsoft.Json;
 using Plat4.Mobile.Models;
 using Plat4.Mobile.Utilities;

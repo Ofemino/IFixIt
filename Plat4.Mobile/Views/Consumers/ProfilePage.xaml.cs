@@ -1,4 +1,5 @@
-﻿using Plat4.Mobile.Views.Shared;
+﻿using Microsoft.Maui.Storage;
+using Plat4.Mobile.Views.Shared;
 
 namespace Plat4.Mobile.Views.Consumers;
 
