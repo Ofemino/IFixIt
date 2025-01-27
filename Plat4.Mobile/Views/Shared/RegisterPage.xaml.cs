@@ -9,7 +9,7 @@ namespace Plat4.Mobile.Views.Shared;
 
 public partial class RegisterPage : ContentPage
 {
-    private readonly RegisterServices _registerServices = new();
+    private readonly IRegisterServices _registerServices;
 
     public RegisterPage(RegisterViewModel registerViewModel)
     {

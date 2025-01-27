@@ -23,7 +23,7 @@
             <ScrollView Grid.Row="1"
                         VerticalOptions="StartAndExpand">
                 <CollectionView ItemsSource="{Binding QuestionBanksList}"
-                                SelectedItem="{Binding SelectedCategory}"
+                                SelectedItem="{Binding SelectedQuestion}"
                                 SelectionChangedCommand="{Binding LoadSubCategoryClickCommand}"
                                 SelectionMode="Single"
                                 EmptyView="No data available!">
@@ -45,7 +45,8 @@
                 </CollectionView>
 
             </ScrollView>
-            <Button Grid.Row="2"
+            <Button x:Name="btnStartAChatMessage"
+                    Clicked="BtnStartAChatMessage_OnClicked" Grid.Row="2"
                     Text="Start A Request"
                     VerticalOptions="End" />
         </Grid>

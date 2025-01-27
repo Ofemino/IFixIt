@@ -3,7 +3,6 @@
 <pages:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  xmlns:pages="clr-namespace:Mopups.Pages;assembly=Mopups"
-                 xmlns:models="clr-namespace:Plat4.Mobile.Models"
                  BackgroundClicked="RequestJobCatalog_OnBackgroundClicked"
                  CloseWhenBackgroundIsClicked="True"
                  BackgroundColor="Transparent"
@@ -22,15 +21,20 @@
             <ScrollView Grid.Row="1"
                         VerticalOptions="StartAndExpand">
                 <VerticalStackLayout Spacing="10">
-                    <Label Text="Dear Provider," />
-                    <Label
+                    <HorizontalStackLayout Spacing="5">
+                        <Label x:Name="lblSaluteTitle" Text="Dear" />
+                        <Label x:Name="lblProviderName" />
+                    </HorizontalStackLayout>
+                    <Label x:Name="lblRequestMessage"
                         Text="Kindly send me your job catalog for my view, I will like to see what jobs you have done in the past." />
                     <Label Text="Thank you!"/>
                 </VerticalStackLayout>
 
             </ScrollView>
             <Button Grid.Row="2"
-                    Text="Send"
+                    x:Name="btnSendCatalogRequest"
+                    Clicked="BtnSendCatalogRequest_OnClicked"
+                    Text="Send Request"
                     VerticalOptions="End" />
         </Grid>
     </ContentPage.Content>

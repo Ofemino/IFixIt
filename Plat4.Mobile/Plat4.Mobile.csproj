@@ -189,4 +189,7 @@
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Platforms\Android\Resources\network_security_config.xml" />
+  </ItemGroup>
 </Project>

@@ -3,11 +3,14 @@
 namespace Plat4.Mobile.ViewModels;
 
 [QueryProperty(nameof(ProviderName), "providerName")]
+[QueryProperty(nameof(CatalogChatRequest), "catalogChatRequest")]
 public partial class ChatMessagesPageViewModel : ObservableObject
 {
     [ObservableProperty] string providerName;
     private ObservableCollection<object> messages { get; set; } = new();
     [ObservableProperty] Author currentUser;
+    [ObservableProperty] 
+    CatalogChatRequest catalogChatRequest;
     [ObservableProperty] string title;
 
 
@@ -16,6 +19,12 @@ public partial class ChatMessagesPageViewModel : ObservableObject
         // messages = new ObservableCollection<object>();
         currentUser = new Author { Name = "Nancy" };
         GenerateMessages();
+
+
+        if (catalogChatRequest != null)
+        {
+            
+        }
     }
 
     public ObservableCollection<object> Messages
