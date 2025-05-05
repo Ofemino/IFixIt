@@ -64,9 +64,9 @@ public partial class RegisterPage : ContentPage
             Platform = DeviceInfo.Current.Platform.ToString(),
             OsVersion = DeviceInfo.Current.VersionString
         };
-        var result = _registerServices.DoSignUpClick(user);
+        var result =await _registerServices.DoSignUpClick(user);
 
-        return 0;
+        return result;
     }
 
     private void LblToc_OnTapped(object? sender, TappedEventArgs e)
